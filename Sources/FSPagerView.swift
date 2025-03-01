@@ -107,7 +107,6 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
     }
     
     /// The time interval of automatic sliding. 0 means disabling automatic sliding. Default is 0.
-    @IBInspectable
     open var paddingLeft: CGFloat? = 0.0 {
         didSet {
             self.collectionViewLayout.forceInvalidate()
