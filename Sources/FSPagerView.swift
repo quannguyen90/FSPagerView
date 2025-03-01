@@ -78,6 +78,8 @@ public protocol FSPagerViewDelegate: NSObjectProtocol {
 open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelegate {
     
     // MARK: - Public properties
+    
+    
 
     /// The object that acts as the data source of the pager view.
     @IBOutlet open weak var dataSource: FSPagerViewDataSource?
@@ -101,6 +103,14 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
             if self.automaticSlidingInterval > 0 {
                 self.startTimer()
             }
+        }
+    }
+    
+    /// The time interval of automatic sliding. 0 means disabling automatic sliding. Default is 0.
+    @IBInspectable
+    open var paddingLeft: CGFloat? = 0.0 {
+        didSet {
+            self.collectionViewLayout.forceInvalidate()
         }
     }
     
